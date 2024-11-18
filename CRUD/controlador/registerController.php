@@ -11,7 +11,7 @@ if(!empty($_POST["btnregistro"])){
         $sql = $conexion->query("INSERT INTO usuario(Nombre,Apellido,DNI,Nacimiento,Email) VALUES('$nombre','$apellido','$dni','$fdn','$correo')");
 
         if ($sql==1) {
-            echo "<div class='alert alert-success'> Usuario Registrado </div>";
+            echo "<div class='alert alert-success'> <i class='bi bi-check-circle-fill'></i> Usuario Registrado </div>";
         } else {
             echo "<div class='alert alert-danger'> Error: el usuario no fue registrado </div>";
         }

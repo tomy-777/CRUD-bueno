@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./modelo/css/bootstrap.css">
+    <link rel="stylesheet" href="./modelo/css/sweetalert2.css">
     <link rel="stylesheet" href="./modelo/css/style.css">
 
     <title>Document</title>
 </head>
 <body>
+    <?php 
+    include "modelo/conexion.php";
+    include "controlador/deleteController.php"
+    ?>
     <div class="container-fluid row">
     <form class="col-4" style="padding: 1rem;" method="post">
-        <h3 class="text-center text-secondary">Registro de Usuario</h3>
+        <h3 class="text-center text-white bg-primary p-4">Registro de Usuario</h3>
     <?php
-    include "modelo/conexion.php";
     include "controlador/registerController.php";
     ?>
 
@@ -46,8 +50,8 @@
 
 
         <div class="col-8 p-4">
-            <table class="table table-light table-striped text-center">
-                <thead class="table-danger">
+            <table class="table table-striped text-center">
+                <thead class="table-primary">
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
@@ -71,8 +75,8 @@
                         <td><?= $datos->Nacimiento; ?></td>
                         <td><?= $datos->Email; ?></td>
                         <td>
-                            <a href="" class="btn btn-small btn-info"><i class="bi bi-pencil-square"></i></a>
-                            <a href="" class="btn btn-small btn-danger"><i class="bi bi-x-circle-fill style="></i></a>
+                            <a href="editar_persona.php?id=<?= $datos->ID ?>" class="btn btn-small btn-info"><i class="bi bi-pencil-square"></i></a>
+                            <a href="index.php?id=<?= $datos->ID ?>" class="btn btn-small btn-danger"><i class="bi bi-x-circle-fill style="></i></a>
                         </td>
                     </tr>
                     <?php }
@@ -83,8 +87,7 @@
         </div>
     </div>
 
-        
-
+<script src="./modelo/js/script.js"></script>
 <script src="./modelo/js/bootstrap.js"></script>
 </body>
 </html>
